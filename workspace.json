@@ -1,0 +1,60 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/nest"
+  },
+  "defaultProject": "la-manicurista-nest-api",
+  "projects": {
+    "la-manicurista-nest-api": {
+      "root": "apps/la-manicurista-nest-api",
+      "sourceRoot": "apps/la-manicurista-nest-api/src",
+      "projectType": "application",
+      "prefix": "la-manicurista-nest-api",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/la-manicurista-nest-api",
+            "main": "apps/la-manicurista-nest-api/src/main.ts",
+            "tsConfig": "apps/la-manicurista-nest-api/tsconfig.app.json",
+            "assets": ["apps/la-manicurista-nest-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/la-manicurista-nest-api/src/environments/environment.ts",
+                  "with": "apps/la-manicurista-nest-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "la-manicurista-nest-api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/la-manicurista-nest-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/la-manicurista-nest-api"],
+          "options": {
+            "jestConfig": "apps/la-manicurista-nest-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  }
+}
