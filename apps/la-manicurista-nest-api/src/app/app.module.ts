@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+// Custom modules
+import { TypeaheadModule } from './shared/modules/typeahead/typeahead.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TypeaheadModule],
 })
 export class AppModule {}

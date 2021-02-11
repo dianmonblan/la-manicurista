@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@la-manicurista/persistent-virtual-storage": [
+        "libs/persistent-virtual-storage/src/index.ts"
+      ],
+      "@la-manicurista/shared": ["libs/shared/src/index.ts"]
+    },
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules", "tmp"]
 }

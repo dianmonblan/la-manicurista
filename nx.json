@@ -15,5 +15,10 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "la-manicurista-nest-api": { "tags": [] } }
+  "projects": {
+    "la-manicurista-nest-api": { "tags": [] },
+    "la-manicurista-express-api": { "tags": [] },
+    "persistent-virtual-storage": { "tags": [] },
+    "shared": { "tags": [] }
+  }
 }
